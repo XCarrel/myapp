@@ -21,6 +21,9 @@
                 Administration
             </div>
             <div class="links">
+                @foreach($users as $user)
+                    <li>{{ $user->getName() }}</li>
+                @endforeach
                 <a href="/">Home</a>
             </div>
         </div>
