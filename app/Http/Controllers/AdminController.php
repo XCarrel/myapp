@@ -14,12 +14,14 @@ class AdminController extends Controller
         return view('admin')->with('users',$users);
     }
 
-    public function hide($id)
+    public function kill(Request $request)
     {
+        $id = $request->delete;
         $users = DataProvider::load();
         foreach ($users as $i => $user)
             if ($user->getId() == $id)
                 unset($users[$i]);
-        return view('admin')->with('users',$users);
+        DataProvider::store($users);
+        return redirect('admin')->with('users',$users);
     }
 }

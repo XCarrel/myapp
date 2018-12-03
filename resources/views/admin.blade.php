@@ -21,9 +21,14 @@
                 Administration
             </div>
             <div class="links">
-                @foreach($users as $user)
-                    <a href="/admin/hide/{{ $user->getId() }}">{{ $user->getName() }}</a>
-                @endforeach
+                <form method="post" action="admin/kill">
+                    @csrf
+                    @foreach($users as $user)
+                        <p>{{ $user->getName() }}
+                            <button name="delete" value="{{ $user->getId() }}">Supprimer</button>
+                        </p>
+                    @endforeach
+                </form>
                 <br><br><a href="/">Home</a>
             </div>
         </div>
