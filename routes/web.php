@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', 'AdminController@index');
+
+Route::get('/admin/hide/{id}', 'AdminController@hide');

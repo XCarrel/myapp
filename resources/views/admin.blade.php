@@ -22,9 +22,9 @@
             </div>
             <div class="links">
                 @foreach($users as $user)
-                    <li>{{ $user->getName() }}</li>
+                    <a href="/admin/hide/{{ $user->getId() }}">{{ $user->getName() }}</a>
                 @endforeach
-                <a href="/">Home</a>
+                <br><br><a href="/">Home</a>
             </div>
         </div>
     </div>
