@@ -40,6 +40,9 @@
                         <td>
                             <button name="add" value="{{ $user->getId() }}">Ajouter</button>
                         </td>
+                        @if ($errors->has('newname'))
+                            <td>{{ $errors->first('newname') }}</td>
+                        @endif
                     </table>
                 </form>
                 <br><br><a href="/">Home</a>

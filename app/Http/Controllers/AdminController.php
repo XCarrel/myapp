@@ -26,6 +26,9 @@ class AdminController extends Controller
 
         if (isset($request->add))
         {
+            $validatedData = $request->validate([
+                'newname' => 'required|min:2|max:10'
+            ]);
             // need to find out the next id
             $nextid = 0;
             foreach ($users as $user)

@@ -4,7 +4,6 @@
     <list default="true" id="8a01caf1-f9e8-45f3-9b6a-80896089bb52" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+            <state relative-caret-position="304">
+              <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -50,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="admin.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/admin.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="40" column="83" selection-start-line="40" selection-start-column="83" selection-end-line="40" selection-end-column="83" />
+            <state relative-caret-position="451">
+              <caret line="42" column="41" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -99,8 +98,8 @@
         <option value="$PROJECT_DIR$/app/Classes/Character.php" />
         <option value="$PROJECT_DIR$/app/Classes/DataProvider.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin.blade.php" />
       </list>
     </option>
   </component>
@@ -322,7 +321,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7954000" />
+    <option name="totallyTimeSpent" value="9515000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-100" y="-1027" width="1680" height="1027" extended-state="6" />
@@ -700,13 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="40" column="83" selection-start-line="40" selection-start-column="83" selection-end-line="40" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Classes/Character.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -716,8 +708,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+        <state relative-caret-position="304">
+          <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="42" column="41" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
         </state>
       </provider>
     </entry>
