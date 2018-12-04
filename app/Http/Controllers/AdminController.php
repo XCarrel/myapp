@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Classes\Character;
 use App\Classes\DataProvider;
+use App\Http\Requests\NewCharacter;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -14,7 +15,7 @@ class AdminController extends Controller
         return view('admin')->with('users', $users);
     }
 
-    public function crud(Request $request)
+    public function crud(NewCharacter $request)
     {
         $users = DataProvider::load();
 
