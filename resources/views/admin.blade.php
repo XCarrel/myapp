@@ -21,13 +21,26 @@
                 Administration
             </div>
             <div class="links">
-                <form method="post" action="admin/kill">
+                <form method="post" action="admin/crud">
                     @csrf
-                    @foreach($users as $user)
-                        <p>{{ $user->getName() }}
-                            <button name="delete" value="{{ $user->getId() }}">Supprimer</button>
-                        </p>
-                    @endforeach
+                    <table>
+                        <tr>
+                            <th>Personnage</th>
+                            <th>Action</th>
+                        </tr>
+                        @foreach($users as $user)
+                            <tr>
+                                <td>{{ $user->getName() }}</td>
+                                <td>
+                                    <button name="delete" value="{{ $user->getId() }}">Supprimer</button>
+                                </td>
+                            </tr>
+                        @endforeach
+                        <td><input type="text" name="newname"></td>
+                        <td>
+                            <button name="add" value="{{ $user->getId() }}">Ajouter</button>
+                        </td>
+                    </table>
                 </form>
                 <br><br><a href="/">Home</a>
             </div>

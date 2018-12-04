@@ -17,4 +17,4 @@ Route::get('/', function () {
 
 Route::get('/admin', 'AdminController@index');
 
-Route::post('/admin/kill','AdminController@kill');
+Route::post('/admin/crud','AdminController@crud');
