@@ -21,7 +21,7 @@
                 Administration
             </div>
             <div class="links">
-                <form method="post" action="admin/crud">
+                <form method="post" action="admin/del">
                     @csrf
                     <table>
                         <tr>
@@ -36,13 +36,20 @@
                                 </td>
                             </tr>
                         @endforeach
-                        <td><input type="text" name="newname"></td>
-                        <td>
-                            <button name="add" value="{{ $user->getId() }}">Ajouter</button>
-                        </td>
-                        @if ($errors->has('newname'))
-                            <td>{{ $errors->first('newname') }}</td>
-                        @endif
+                    </table>
+                </form>
+                <form method="post" action="admin/add">
+                    @csrf
+                    <table>
+                        <tr>
+                            <td><input type="text" name="newname"></td>
+                            <td>
+                                <button name="add" value="{{ $user->getId() }}">Ajouter</button>
+                            </td>
+                            @if ($errors->has('newname'))
+                                <td>{{ $errors->first('newname') }}</td>
+                            @endif
+                        </tr>
                     </table>
                 </form>
                 <br><br><a href="/">Home</a>

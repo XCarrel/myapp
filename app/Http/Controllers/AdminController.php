@@ -15,21 +15,24 @@ class AdminController extends Controller
         return view('admin')->with('users', $users);
     }
 
-    public function crud(NewCharacter $request)
+    public function del(Request $request)
     {
         $users = DataProvider::load();
 
-        $delid = $request->delete;
-        if (isset($delid))
             foreach ($users as $i => $user)
-                if ($user->getId() == $delid)
+                if ($user->getId() == $request->delete)
                     unset($users[$i]);
+
+        DataProvider::store($users);
+        return redirect('admin')->with('users', $users);
+    }
+
+    public function add(NewCharacter $request)
+    {
+        $users = DataProvider::load();
 
         if (isset($request->add))
         {
-            $validatedData = $request->validate([
-                'newname' => 'required|min:2|max:10'
-            ]);
             // need to find out the next id
             $nextid = 0;
             foreach ($users as $user)

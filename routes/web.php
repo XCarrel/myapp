@@ -17,4 +17,6 @@ Route::get('/', function () {
 
 Route::get('/admin', 'AdminController@index');
 
-Route::post('/admin/crud','AdminController@crud');
+Route::post ('/admin/del','AdminController@del');
+
+Route::post('/admin/add','AdminController@add');

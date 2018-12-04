@@ -24,7 +24,7 @@ class NewCharacter extends FormRequest
     public function rules()
     {
         return [
-            'newname' => 'required|min:2|max:10'
+            'newname' => 'required|min:2|max:10|not_regex:/shit/i|regex:/^[a-zA-Z]*$/'
         ];
     }
 
@@ -33,7 +33,9 @@ class NewCharacter extends FormRequest
         return [
             'newname.required' => 'Ce champ doit être rempli',
             'newname.min' => 'Le nom doit contenir au moins 2 caractères',
-            'newname.max' => 'Le nom ne peut pas faire plus de 10 caractères'
+            'newname.max' => 'Le nom ne peut pas faire plus de 10 caractères',
+            'newname.not_regex' => 'Restons polis SVP',
+            'newname.regex' => 'Vous ne pouvez utiliser que des lettres'
         ];
     }
 }
