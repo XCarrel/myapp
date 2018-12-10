@@ -25,14 +25,18 @@
                     @csrf
                     <table>
                         <tr>
-                            <th>Personnage</th>
+                            <th>Chose</th>
+                            <th>Nombre de briques</th>
+                            <th>Couleur</th>
                             <th>Action</th>
                         </tr>
-                        @foreach($users as $user)
+                        @foreach($things as $thing)
                             <tr>
-                                <td>{{ $user->getName() }}</td>
+                                <td>{{ $thing->tname }}</td>
+                                <td>{{ $thing->nbBricks }}</td>
+                                <td>{{ $thing->cname }}</td>
                                 <td>
-                                    <button name="delete" value="{{ $user->getId() }}">Supprimer</button>
+                                    <button name="delete" value="{{ $thing->id }}">Supprimer</button>
                                 </td>
                             </tr>
                         @endforeach
@@ -43,8 +47,16 @@
                     <table>
                         <tr>
                             <td><input type="text" name="newname"></td>
+                            <td><input type="number" name="newbricks"></td>
                             <td>
-                                <button name="add" value="{{ $user->getId() }}">Ajouter</button>
+                                <select name="newcolor">
+                                    @foreach($colors as $color)
+                                        <option value="{{ $color->id }}">{{ $color->name }}</option>
+                                    @endforeach
+                                </select>
+                            </td>
+                            <td>
+                                <button name="add" value="{{ $thing->id }}">Ajouter</button>
                             </td>
                             @if ($errors->has('newname'))
                                 <td>{{ $errors->first('newname') }}</td>

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class NewThing extends FormRequest
+class ThingRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,7 @@ class NewThing extends FormRequest
     {
         return [
             'newname' => 'required|min:2|max:10|not_regex:/shit/i|regex:/^[a-zA-Z]*$/',
-            'newbricks' => 'required|min:1'
+            'newbricks' => 'required'
         ];
     }
 
@@ -36,7 +36,10 @@ class NewThing extends FormRequest
             'newname.min' => 'Le nom doit contenir au moins 2 caractères',
             'newname.max' => 'Le nom ne peut pas faire plus de 10 caractères',
             'newname.not_regex' => 'Restons polis SVP',
-            'newname.regex' => 'Vous ne pouvez utiliser que des lettres'
+            'newname.regex' => 'Vous ne pouvez utiliser que des lettres',
+            'newbricks.required' => 'vous devez donner un nombre de briques',
+            'newbricks.min' => 'Une chose contient au moins une brique'
         ];
     }
+
 }
