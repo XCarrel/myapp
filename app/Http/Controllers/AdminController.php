@@ -13,7 +13,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $things = DB::select('select things.id, things.name as tname, things.nbBricks, colors.name as cname from `things` inner join colors on things.color_id = colors.id');
+        $things = DB::table('things')->join('colors','things.color_id','=','colors.id')->select('things.id as id','things.name as tname','nbBricks','colors.name as cname')->get();
         $colors = DB::select('select * from colors');
         return view('admin')->with('things', $things)->with('colors',$colors);
     }
