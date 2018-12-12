@@ -35,6 +35,7 @@ class AdminController extends Controller
             $newthing->nbBricks = $request->newbricks;
             $newthing->color_id = $request->newcolor;
             $newthing->save();
+            $request->session()->flash('flashmessage',"{$newthing->name} a été ajoutée");
             return redirect('admin');
         } catch (\Exception $e)
         {

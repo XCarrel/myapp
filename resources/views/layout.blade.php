@@ -62,19 +62,19 @@
             margin-bottom: 30px;
         }
 
-        .errormsg {
+        .infomsg {
             text-align: center;
-            background-color: plum;
-            color: purple;
+            background-color: palegreen;
+            color: darkgreen;
             font-weight: bold;
-            border: 1px solid purple;
+            border: 1px solid darkgreen;
             border-radius: 3px;
             margin: 5px;
         }
     </style>
 </head>
 <body>
-@include('errormessage')
+@include('infomessage')
 @yield('content')
 </body>
 </html>
