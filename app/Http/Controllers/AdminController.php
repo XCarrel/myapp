@@ -17,7 +17,7 @@ class AdminController extends Controller
     {
         $things = Thing::all();
         $colors = Color::all();
-        return view('admin')->with('things', $things)->with('colors',$colors);
+        return view('admin')->with('things', $things)->with('colors', $colors);
     }
 
     public function del(Request $request)
@@ -28,8 +28,17 @@ class AdminController extends Controller
 
     public function add(ThingRequest $request)
     {
-        error_log($request->newbricks);
-        DB::insert('insert into things (name,nbBricks,color_id) values (:name,:nbBricks,:color)',["name" => $request->newname,"nbBricks" => $request->newbricks, "color" => $request->newcolor]);
+        try
+        {
+            $newthing = new Thing();
+            $newthing->name = $request->newname;
+            $newthing->nbBricks = $request->newbricks;
+            $newthing->color_id = $request->newcolor;
+            $newthing->save();
+        } catch (\Exception $e)
+        {
+            $request->session()->flash('flashmessage','existe déjà');
+        }
         return redirect('admin');
     }
 }
