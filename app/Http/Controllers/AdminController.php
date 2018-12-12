@@ -13,7 +13,7 @@ use App\Color;
 
 class AdminController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $things = Thing::all();
         $colors = Color::all();
@@ -35,10 +35,10 @@ class AdminController extends Controller
             $newthing->nbBricks = $request->newbricks;
             $newthing->color_id = $request->newcolor;
             $newthing->save();
+            return redirect('admin');
         } catch (\Exception $e)
         {
-            $request->session()->flash('flashmessage','existe déjà');
+            return back()->withErrors(['dupmessage' => 'Cette chose existe déjà'])->withInput();
         }
-        return redirect('admin');
     }
 }

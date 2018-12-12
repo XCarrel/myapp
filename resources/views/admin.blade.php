@@ -46,8 +46,8 @@
                     @csrf
                     <table>
                         <tr>
-                            <td><input type="text" name="newname"></td>
-                            <td><input type="number" name="newbricks"></td>
+                            <td><input type="text" name="newname" value="{{ old('newname') }}"></td>
+                            <td><input type="number" name="newbricks" value="{{ old('newbricks') }}"></td>
                             <td>
                                 <select name="newcolor">
                                     @foreach($colors as $color)
@@ -60,6 +60,9 @@
                             </td>
                             @if ($errors->has('newname'))
                                 <td>{{ $errors->first('newname') }}</td>
+                            @endif
+                            @if ($errors->has('dupmessage'))
+                                <td>{{ $errors->first('dupmessage') }}</td>
                             @endif
                         </tr>
                     </table>
