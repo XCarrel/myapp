@@ -32,9 +32,9 @@
                         </tr>
                         @foreach($things as $thing)
                             <tr>
-                                <td>{{ $thing->tname }}</td>
+                                <td>{{ $thing->name }}</td>
                                 <td>{{ $thing->nbBricks }}</td>
-                                <td>{{ $thing->cname }}</td>
+                                <td>{{ $thing->color->name }}</td>
                                 <td>
                                     <button name="delete" value="{{ $thing->id }}">Supprimer</button>
                                 </td>

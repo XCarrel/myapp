@@ -8,13 +8,15 @@ use App\Http\Requests\NewCharacter;
 use App\Http\Requests\ThingRequest;
 use Illuminate\Http\Request;
 use DB;
+use App\Thing;
+use App\Color;
 
 class AdminController extends Controller
 {
     public function index()
     {
-        $things = DB::table('things')->join('colors','things.color_id','=','colors.id')->select('things.id as id','things.name as tname','nbBricks','colors.name as cname')->get();
-        $colors = DB::select('select * from colors');
+        $things = Thing::all();
+        $colors = Color::all();
         return view('admin')->with('things', $things)->with('colors',$colors);
     }
 
