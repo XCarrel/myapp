@@ -9,8 +9,8 @@ class Thing extends Model
 {
     public $timestamps = false;
 
-    public function color()
+    public function colors()
     {
-        return $this->belongsTo('App\Color');
+        return $this->belongsToMany('App\Color');
     }
 }

@@ -27,14 +27,22 @@
                         <tr>
                             <th>Chose</th>
                             <th>Nombre de briques</th>
-                            <th>Couleur</th>
+                            <th>Couleurs</th>
                             <th>Action</th>
                         </tr>
                         @foreach($things as $thing)
                             <tr>
                                 <td>{{ $thing->name }}</td>
                                 <td>{{ $thing->nbBricks }}</td>
-                                <td>{{ $thing->color->name }}</td>
+                                <td>
+                                    @if (count($thing->colors) > 0)
+                                        @foreach ($thing->colors as $color)
+                                            <span>{{ $color->name }}</span>
+                                        @endforeach
+                                    @else
+                                        <span>Aucune</span>
+                                    @endif
+                                </td>
                                 <td>
                                     <button name="delete" value="{{ $thing->id }}">Supprimer</button>
                                 </td>
@@ -48,13 +56,6 @@
                         <tr>
                             <td><input type="text" name="newname" value="{{ old('newname') }}"></td>
                             <td><input type="number" name="newbricks" value="{{ old('newbricks') }}"></td>
-                            <td>
-                                <select name="newcolor">
-                                    @foreach($colors as $color)
-                                        <option value="{{ $color->id }}">{{ $color->name }}</option>
-                                    @endforeach
-                                </select>
-                            </td>
                             <td>
                                 <button name="add" value="{{ $thing->id }}">Ajouter</button>
                             </td>

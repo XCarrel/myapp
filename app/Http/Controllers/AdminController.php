@@ -16,13 +16,14 @@ class AdminController extends Controller
     public function index(Request $request)
     {
         $things = Thing::all();
-        $colors = Color::all();
-        return view('admin')->with('things', $things)->with('colors', $colors);
+        return view('admin')->with('things', $things);
     }
 
     public function del(Request $request)
     {
-        DB::delete('delete from things where id = :id', ['id' => $request->delete]);
+        $thing = Thing::find($request->delete);
+        $thing->delete();
+        $request->session()->flash('flashmessage',"{$thing->name} a été supprimée");
         return redirect('admin');
     }
 
@@ -33,8 +34,15 @@ class AdminController extends Controller
             $newthing = new Thing();
             $newthing->name = $request->newname;
             $newthing->nbBricks = $request->newbricks;
-            $newthing->color_id = $request->newcolor;
             $newthing->save();
+            // Pick random colors to add
+            $colors = Color::all();
+            $keep = rand(0,count($colors)); // randomly decide how many colors we'll keep
+            while (count($colors) > $keep) // as long as we have too many
+                unset($colors[rand(0,count($colors))]); // we delete one at random
+
+            $newthing->colors()->attach($colors);
+
             $request->session()->flash('flashmessage',"{$newthing->name} a été ajoutée");
             return redirect('admin');
         } catch (\Exception $e)
