@@ -12,5 +12,5 @@ $(document).ready(function () {
 
 function checkAddButtonVisibility()
 {
-    if ($('#txtnewname').val().length > 0 && $('#nbrnewbricks').val() > 0) $('#cmdAdd').removeClass('hide')
+    if ($('#txtnewname').val().length > 0 && $('#nbrnewbricks').val() > 0) $('#cmdAdd').removeClass('d-none')
 }

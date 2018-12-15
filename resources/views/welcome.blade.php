@@ -1,29 +1,15 @@
 @extends('layout')
 
 @section('content')
-    <div class="flex-center position-ref full-height">
-        @if (Route::has('login'))
-            <div class="top-right links">
-                @auth
-                    <a href="{{ url('/home') }}">Home</a>
-                @else
-                    <a href="{{ route('login') }}">Login</a>
 
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
-                    @endif
-                @endauth
-            </div>
-        @endif
-
-        <div class="content">
-            <div class="title m-b-md">
-                Laravel
-            </div>
-
-            <div class="links">
-                <a href="/admin">Administration</a>
-            </div>
-        </div>
+    <div class="row justify-content-center">
+        <h1>
+            Laravel
+        </h1>
+    </div>
+    <div class="row justify-content-center">
+        <button type="button" class="btn btn-primary">
+            <a href="/admin" class="button-link">Administration</a>
+        </button>
     </div>
 @endsection

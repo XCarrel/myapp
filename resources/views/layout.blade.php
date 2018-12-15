@@ -6,8 +6,6 @@
 
     <title>Laravel</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
     <link href="css/app.css" rel="stylesheet" type="text/css">
     <link href="css/bootstrap/bootstrap.css" rel="stylesheet" type="text/css">
     <script src="js/jquery/jquery.js" type="text/javascript"></script>
@@ -16,7 +14,7 @@
     @yield('pagejs')
 
 </head>
-<body>
+<body class="container">
 @include('infomessage')
 @yield('content')
 </body>
