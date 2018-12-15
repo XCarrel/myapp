@@ -4,6 +4,10 @@
     <link href="css/admin.css" rel="stylesheet" type="text/css">
 @endsection
 
+@section('pagejs')
+   <script src="js/admin.js" type="text/javascript"></script>
+@endsection
+
 @section('content')
     <div class="flex-center position-ref full-height">
         @if (Route::has('login'))
@@ -58,10 +62,10 @@
                     @csrf
                     <table>
                         <tr>
-                            <td><input type="text" name="newname" value="{{ old('newname') }}"></td>
-                            <td><input type="number" name="newbricks" value="{{ old('newbricks') }}"></td>
+                            <td><input type="text" name="newname" value="{{ old('newname') }}" id="txtnewname"></td>
+                            <td><input type="number" name="newbricks" value="{{ old('newbricks') }}" id="nbrnewbricks"></td>
                             <td>
-                                <button name="add" value="{{ $thing->id }}">Ajouter</button>
+                                <button name="add" value="{{ $thing->id }}" id="cmdAdd" class="hide">Ajouter</button>
                             </td>
                             @if ($errors->has('newname'))
                                 <td>{{ $errors->first('newname') }}</td>

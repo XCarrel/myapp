@@ -9,7 +9,9 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
     <link href="css/app.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery/jquery.js" type="text/javascript"></script>
     @yield('pagecss')
+    @yield('pagejs')
 
 </head>
 <body>

@@ -10540,3 +10540,7 @@ body {
   margin: 5px;
 }
 
+.hide {
+  display: none !important;
+}
+
