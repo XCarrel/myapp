@@ -15,4 +15,7 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/admin.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/admin.scss', 'public/css')
-    .copy('node_modules/jquery/dist','public/js/jquery');
+    .copy('node_modules/jquery/dist','public/js/jquery')
+    .copy('node_modules/bootstrap/dist/css','public/css/bootstrap')
+    .copy('node_modules/bootstrap/dist/js','public/js/bootstrap');
+

@@ -5,7 +5,7 @@
 @endsection
 
 @section('pagejs')
-   <script src="js/admin.js" type="text/javascript"></script>
+    <script src="js/admin.js" type="text/javascript"></script>
 @endsection
 
 @section('content')
@@ -25,38 +25,36 @@
         @endif
 
         <div class="content">
-            <div class="title m-b-md">
+            <h1>
                 Administration
-            </div>
+            </h1>
             <div class="links">
                 <form method="post" action="admin/del">
                     @csrf
-                    <table>
-                        <tr>
-                            <th>Chose</th>
-                            <th>Nombre de briques</th>
-                            <th>Couleurs</th>
-                            <th>Action</th>
-                        </tr>
-                        @foreach($things as $thing)
-                            <tr>
-                                <td>{{ $thing->name }}</td>
-                                <td>{{ $thing->nbBricks }}</td>
-                                <td>
-                                    @if (count($thing->colors) > 0)
-                                        @foreach ($thing->colors as $color)
-                                            <span>{{ $color->name }}</span>
-                                        @endforeach
-                                    @else
-                                        <span>Aucune</span>
-                                    @endif
-                                </td>
-                                <td>
-                                    <button name="delete" value="{{ $thing->id }}">Supprimer</button>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </table>
+                    <div class="row col-12">
+                        <div class="col-2">Chose</div>
+                        <div class="col-2">Nombre de briques</div>
+                        <div class="col-6">Couleurs</div>
+                        <div class="col-2">Action</div>
+                    </div>
+                    @foreach($things as $thing)
+                        <div class="row col-12">
+                            <div class="col-2">{{ $thing->name }}</div>
+                            <div class="col-2">{{ $thing->nbBricks }}</div>
+                            <div class="col-6">
+                                @if (count($thing->colors) > 0)
+                                    @foreach ($thing->colors as $color)
+                                        <span class="colortag">{{ $color->name }}</span>
+                                    @endforeach
+                                @else
+                                    <span>Aucune</span>
+                                @endif
+                            </div>
+                            <div class="col-2">
+                                <button name="delete" value="{{ $thing->id }}" class="button button-red">Supprimer</button>
+                            </div>
+                        </div>
+                    @endforeach
                 </form>
                 <form method="post" action="admin/add">
                     @csrf
@@ -76,7 +74,7 @@
                         </tr>
                     </table>
                 </form>
-                <br><br><a href="/">Home</a>
+                <br><br><button><a href="/">Home</a></button>
             </div>
         </div>
     </div>

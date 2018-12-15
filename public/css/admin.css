@@ -1,13 +1,7 @@
-button {
-  background-color: #aaa;
-  border: none;
-  border-radius: 20px;
+.colortag {
+  background-color: #aaaaaa;
   color: white;
-  padding: 5px 10px;
-  margin: 5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  font-weight: bolder;
+  padding: 3px;
 }
 
