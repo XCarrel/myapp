@@ -37,8 +37,8 @@ class AdminController extends Controller
             $newthing->save();
             // Pick random colors to add
             $colors = Color::all();
-            $keep = rand(0,count($colors)); // randomly decide how many colors we'll keep
-            while (count($colors) > $keep) // as long as we have too many
+            $kill = rand(0,count($colors)); // randomly decide how many colors we'll remove
+            for ($i=0; $i<$kill; $i++) // as long as we have too many
                 unset($colors[rand(0,count($colors))]); // we delete one at random
 
             $newthing->colors()->attach($colors);

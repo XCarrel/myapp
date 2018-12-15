@@ -1,5 +1,9 @@
 @extends('layout')
 
+@section('pagecss')
+    <link href="css/admin.css" rel="stylesheet" type="text/css">
+@endsection
+
 @section('content')
     <div class="flex-center position-ref full-height">
         @if (Route::has('login'))
